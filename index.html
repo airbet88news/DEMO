@@ -7,29 +7,47 @@
   <style>
     body {
       margin: 0;
-      background-color: #000;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://i.postimg.cc/J0LqF2v7/Enjoy-Your-Life-1080-1080-piksel-1.png') no-repeat center center fixed;
+      background-size: cover;
     }
+
+    .iframe-wrapper {
+      padding-top: 80px; /* Geser ke bawah */
+      display: flex;
+      justify-content: center;
+    }
+
     iframe {
       width: 100%;
+      max-width: 1080px;
       height: 600px;
       border: none;
-      max-width: 100%;
+      display: block;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     }
+
     .currency-note {
       text-align: center;
-      margin: 10px;
-      font-family: Arial, sans-serif;
+      margin: 20px;
       color: white;
       font-size: 14px;
+      text-shadow: 1px 1px 2px #000;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://prelive-gs1.pragmaticplaylive.net/api/spacemanDemo" allowfullscreen></iframe>
+
+  <div class="iframe-wrapper">
+    <iframe src="https://prelive-gs1.pragmaticplaylive.net/api/spacemanDemo" allowfullscreen></iframe>
+  </div>
+
   <div class="currency-note">
     * Nilai saldo & taruhan ditampilkan dalam Euro (€).<br>
     Estimasi konversi: €1 ≈ Rp17.000.<br>
     Saldo €100.000 = Rp1.700.000.000.
   </div>
+
 </body>
 </html>
