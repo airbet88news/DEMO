@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Demo Spaceman</title>
+  <title>Spaceman + Promo</title>
   <style>
     body {
       margin: 0;
@@ -13,17 +13,41 @@
       color: white;
     }
 
-    .promo-section {
+    .nav-buttons {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      gap: 10px;
+    }
+
+    .nav-buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #5C27D5;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .nav-buttons button.active {
+      background: #C529D5;
+    }
+
+    .section {
+      display: none;
       padding: 20px;
+    }
+
+    .section.active {
+      display: block;
     }
 
     .promo-card {
       background: rgba(0, 0, 0, 0.6);
       border-radius: 10px;
-      margin-bottom: 20px;
+      margin: 20px auto;
       overflow: hidden;
       max-width: 1000px;
       width: 95%;
@@ -64,17 +88,13 @@
       text-decoration: none;
     }
 
-    .iframe-wrapper {
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-    }
-
     iframe {
       width: 100%;
       max-width: 1080px;
       height: 600px;
       border: none;
+      display: block;
+      margin: auto;
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     }
 
@@ -88,11 +108,16 @@
 </head>
 <body>
 
-  <!-- Bagian Promo -->
-  <div class="promo-section">
+  <!-- Tombol Navigasi -->
+  <div class="nav-buttons">
+    <button id="btnPromo" class="active" onclick="showSection('promo')">PROMOSI</button>
+    <button id="btnDemo" onclick="showSection('demo')">DEMO SPACEMAN</button>
+  </div>
 
+  <!-- Section Promosi -->
+  <div id="sectionPromo" class="section active">
     <div class="promo-card">
-      <img class="promo-image" src="https://i.postimg.cc/Gt5PkGH3/promo1.png" alt="Promo 1">
+      <img class="promo-image" src="https://i.postimg.cc/90CN91Kv/kelas-besar-ceria.png" alt="Promo 1">
       <div class="promo-content">
         <div>
           <div class="promo-title">KELAS BESAR CERIA</div>
@@ -103,7 +128,7 @@
     </div>
 
     <div class="promo-card">
-      <img class="promo-image" src="https://i.postimg.cc/Fzv0Scn1/promo2.png" alt="Promo 2">
+      <img class="promo-image" src="https://i.postimg.cc/hPKGd6NL/deposit20.png" alt="Promo 2">
       <div class="promo-content">
         <div>
           <div class="promo-title">BONUS DEPOSIT 20% SLOT</div>
@@ -112,22 +137,35 @@
         <a href="#" class="promo-button">Ambil Promo</a>
       </div>
     </div>
-
-    <!-- Tambah promo lain di sini jika perlu -->
-    
   </div>
 
-  <!-- Game Iframe -->
-  <div class="iframe-wrapper">
+  <!-- Section Demo Game -->
+  <div id="sectionDemo" class="section">
     <iframe src="https://prelive-gs1.pragmaticplaylive.net/api/spacemanDemo" allowfullscreen></iframe>
+    <div class="currency-note">
+      * Nilai saldo & taruhan ditampilkan dalam Euro (€).<br>
+      Estimasi konversi: €1 ≈ Rp17.000.<br>
+      Saldo €100.000 = Rp1.700.000.000.
+    </div>
   </div>
 
-  <!-- Catatan Kurs -->
-  <div class="currency-note">
-    * Nilai saldo & taruhan ditampilkan dalam Euro (€).<br>
-    Estimasi konversi: €1 ≈ Rp17.000.<br>
-    Saldo €100.000 = Rp1.700.000.000.
-  </div>
+  <!-- Script Tab Switch -->
+  <script>
+    function showSection(target) {
+      document.getElementById("sectionPromo").classList.remove("active");
+      document.getElementById("sectionDemo").classList.remove("active");
+      document.getElementById("btnPromo").classList.remove("active");
+      document.getElementById("btnDemo").classList.remove("active");
+
+      if (target === 'promo') {
+        document.getElementById("sectionPromo").classList.add("active");
+        document.getElementById("btnPromo").classList.add("active");
+      } else {
+        document.getElementById("sectionDemo").classList.add("active");
+        document.getElementById("btnDemo").classList.add("active");
+      }
+    }
+  </script>
 
 </body>
 </html>
