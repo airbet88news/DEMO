@@ -94,31 +94,51 @@
       z-index: 999;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       justify-content: center;
       align-items: center;
     }
     .modal-content {
-      background: #222;
-      max-width: 700px;
+      background: linear-gradient(to bottom, #1e002d, #240041);
+      color: white;
+      max-width: 720px;
       width: 90%;
-      padding: 20px;
-      border-radius: 10px;
+      padding: 30px;
+      border-radius: 15px;
       position: relative;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
     }
     .modal-close {
       position: absolute;
-      top: 10px; right: 15px;
-      font-size: 20px;
+      top: 15px; right: 20px;
+      font-size: 22px;
       cursor: pointer;
       color: white;
     }
     .modal h2 {
       margin-top: 0;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .modal h3 {
+      text-align: center;
+      margin-top: 30px;
+      text-transform: uppercase;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 15px;
+      font-size: 16px;
+      color: #bbb;
+    }
+    .modal ul {
+      padding-left: 20px;
     }
     .modal p, .modal ul {
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+    .highlight {
+      color: yellow;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -150,12 +170,12 @@
     </div>
   </div>
 
-  <!-- MODAL POPUP -->
   <div id="promoModal" class="modal">
     <div class="modal-content">
       <span class="modal-close" onclick="closeModal()">&times;</span>
       <h2>BONUS NEW MEMBER UP TO 20% KHUSUS SPACEMAN</h2>
       <p><strong>Tanggal akhir:</strong> -</p>
+
       <h3>Syarat & Ketentuan Berlaku</h3>
       <ul>
         <li>Promo ini berlaku untuk semua new player CERIABET</li>
@@ -165,15 +185,18 @@
         <li>Syarat TurnOver X3</li>
         <li>Promo diberikan saat pertama kali sebelum bermain</li>
       </ul>
-      <h4>Cara Klaim</h4>
+
+      <h3>Cara Klaim</h3>
       <ul>
         <li>Player wajib klaim sebelum saldo dimainkan</li>
         <li>Player hanya bisa klaim via WhatsApp, Telegram & Livechat</li>
       </ul>
-      <h4>Contoh Perhitungan</h4>
+
+      <h3>Contoh Perhitungan</h3>
       <p>Depo 50.000 + 10.000 Bonus x 3 = 180.000 (harus dicapai untuk withdraw)</p>
-      <h4 style="color: yellow">PERHATIAN</h4>
-      <p style="color: yellow">
+
+      <h3 class="highlight">PERHATIAN</h3>
+      <p class="highlight">
         CERIABET berhak membatalkan bonus jika ada kecurangan / sindikat.<br>
         Semua keputusan tim CERIABET bersifat mutlak & tidak bisa diganggu gugat.
       </p>
