@@ -12,14 +12,12 @@
       background-size: cover;
       color: white;
     }
-
     .nav-buttons {
       display: flex;
       justify-content: center;
       padding: 15px;
       gap: 10px;
     }
-
     .nav-buttons button {
       padding: 10px 20px;
       border: none;
@@ -28,22 +26,17 @@
       color: white;
       cursor: pointer;
       font-weight: bold;
-      transition: background 0.3s;
     }
-
     .nav-buttons button.active {
       background: #C529D5;
     }
-
     .section {
       display: none;
       padding: 20px;
     }
-
     .section.active {
       display: block;
     }
-
     .promo-card {
       background: rgba(0, 0, 0, 0.6);
       border-radius: 10px;
@@ -53,7 +46,6 @@
       width: 95%;
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
-
     .promo-image {
       width: 100%;
       height: auto;
@@ -62,7 +54,6 @@
       display: block;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-
     .promo-content {
       padding: 15px;
       display: flex;
@@ -70,17 +61,8 @@
       align-items: center;
       flex-wrap: wrap;
     }
-
-    .promo-title {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .promo-date {
-      font-size: 13px;
-      color: #ccc;
-    }
-
+    .promo-title { font-size: 18px; font-weight: bold; }
+    .promo-date { font-size: 13px; color: #ccc; }
     .promo-button {
       padding: 10px 20px;
       background: #C529D5;
@@ -91,7 +73,6 @@
       margin-top: 10px;
       text-decoration: none;
     }
-
     iframe {
       width: 100%;
       max-width: 1080px;
@@ -101,49 +82,65 @@
       margin: auto;
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     }
-
     .currency-note {
       text-align: center;
       margin: 20px;
       font-size: 14px;
       text-shadow: 1px 1px 2px #000;
     }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #222;
+      max-width: 700px;
+      width: 90%;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: white;
+    }
+    .modal h2 {
+      margin-top: 0;
+    }
+    .modal p, .modal ul {
+      font-size: 14px;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
-
-  <!-- Tombol Navigasi -->
   <div class="nav-buttons">
     <button id="btnPromo" class="active" onclick="showSection('promo')">PROMOSI</button>
     <button id="btnDemo" onclick="showSection('demo')">DEMO SPACEMAN</button>
   </div>
 
-  <!-- Section Promosi -->
   <div id="sectionPromo" class="section active">
     <div class="promo-card">
-      <img class="promo-image" src="https://i.postimg.cc/q7HrYQhD/id-promo-00b6dd98-55cf-4d54-b68e-0a0302fd5c7a-1750934288283.jpg" alt="Promo 1">
-      <div class="promo-content">
-        <div>
-          <div class="promo-title">MISI SPACEMAN DI MULAI 🚀</div>
-          <div class="promo-date">Khusus Member Spaceman</div>
-        </div>
-        <a href="#" class="promo-button">Detail</a>
-      </div>
-    </div>
-
-    <div class="promo-card">
-      <img class="promo-image" src="https://i.postimg.cc/4NHrgVTD/id-promo-ffa2f254-c9a5-4b6b-83e6-045de8cceb57-1750934800650.jpg" alt="Promo 2">
+      <img class="promo-image" src="https://i.postimg.cc/4NHrgVTD/id-promo-ffa2f254-c9a5-4b6b-83e6-045de8cceb57-1750934800650.jpg" alt="Promo">
       <div class="promo-content">
         <div>
           <div class="promo-title">BONUS NEW MEMBER UP TO 20% KHUSUS SPACEMAN</div>
-          <div class="promo-date">Khusu Member Spaceman</div>
+          <div class="promo-date">Khusus Member Spaceman</div>
         </div>
-        <a href="#" class="promo-button">Ambil Promo</a>
+        <button class="promo-button" onclick="openModal()">Detail</button>
       </div>
     </div>
   </div>
 
-  <!-- Section Demo Game -->
   <div id="sectionDemo" class="section">
     <iframe src="https://prelive-gs1.pragmaticplaylive.net/api/spacemanDemo" allowfullscreen></iframe>
     <div class="currency-note">
@@ -153,7 +150,36 @@
     </div>
   </div>
 
-  <!-- Script Tab Switch -->
+  <!-- MODAL POPUP -->
+  <div id="promoModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h2>BONUS NEW MEMBER UP TO 20% KHUSUS SPACEMAN</h2>
+      <p><strong>Tanggal akhir:</strong> -</p>
+      <h3>Syarat & Ketentuan Berlaku</h3>
+      <ul>
+        <li>Promo ini berlaku untuk semua new player CERIABET</li>
+        <li>Hanya berlaku di game SPACEMAN</li>
+        <li>Minimal deposit IDR 25,000</li>
+        <li>Maksimal bonus yang diberikan IDR 200,000</li>
+        <li>Syarat TurnOver X3</li>
+        <li>Promo diberikan saat pertama kali sebelum bermain</li>
+      </ul>
+      <h4>Cara Klaim</h4>
+      <ul>
+        <li>Player wajib klaim sebelum saldo dimainkan</li>
+        <li>Player hanya bisa klaim via WhatsApp, Telegram & Livechat</li>
+      </ul>
+      <h4>Contoh Perhitungan</h4>
+      <p>Depo 50.000 + 10.000 Bonus x 3 = 180.000 (harus dicapai untuk withdraw)</p>
+      <h4 style="color: yellow">PERHATIAN</h4>
+      <p style="color: yellow">
+        CERIABET berhak membatalkan bonus jika ada kecurangan / sindikat.<br>
+        Semua keputusan tim CERIABET bersifat mutlak & tidak bisa diganggu gugat.
+      </p>
+    </div>
+  </div>
+
   <script>
     function showSection(target) {
       document.getElementById("sectionPromo").classList.remove("active");
@@ -169,7 +195,12 @@
         document.getElementById("btnDemo").classList.add("active");
       }
     }
+    function openModal() {
+      document.getElementById("promoModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("promoModal").style.display = "none";
+    }
   </script>
-
 </body>
 </html>
