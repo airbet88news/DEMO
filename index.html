@@ -156,7 +156,18 @@
           <div class="promo-title">BONUS NEW MEMBER UP TO 20% KHUSUS SPACEMAN</div>
           <div class="promo-date">Khusus Member Spaceman</div>
         </div>
-        <button class="promo-button" onclick="openModal()">Detail</button>
+        <button class="promo-button" onclick="openModal('promoModal')">Detail</button>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <img class="promo-image" src="https://i.postimg.cc/q7HrYQhD/id-promo-00b6dd98-55cf-4d54-b68e-0a0302fd5c7a-1750934288283.jpg" alt="Promo">
+      <div class="promo-content">
+        <div>
+          <div class="promo-title">MISI SPACEMAN DI MULAI 🚀</div>
+          <div class="promo-date">Khusus Member Spaceman</div>
+        </div>
+        <button class="promo-button" onclick="openModal('promoModal2')">Detail</button>
       </div>
     </div>
   </div>
@@ -172,10 +183,9 @@
 
   <div id="promoModal" class="modal">
     <div class="modal-content">
-      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <span class="modal-close" onclick="closeModal('promoModal')">&times;</span>
       <h2>BONUS NEW MEMBER UP TO 20% KHUSUS SPACEMAN</h2>
       <p><strong>Tanggal akhir:</strong> -</p>
-
       <h3>Syarat & Ketentuan Berlaku</h3>
       <ul>
         <li>Promo ini berlaku untuk semua new player CERIABET</li>
@@ -185,20 +195,50 @@
         <li>Syarat TurnOver X3</li>
         <li>Promo diberikan saat pertama kali sebelum bermain</li>
       </ul>
-
       <h3>Cara Klaim</h3>
       <ul>
         <li>Player wajib klaim sebelum saldo dimainkan</li>
         <li>Player hanya bisa klaim via WhatsApp, Telegram & Livechat</li>
       </ul>
-
       <h3>Contoh Perhitungan</h3>
       <p>Depo 50.000 + 10.000 Bonus x 3 = 180.000 (harus dicapai untuk withdraw)</p>
-
       <h3 class="highlight">PERHATIAN</h3>
       <p class="highlight">
         CERIABET berhak membatalkan bonus jika ada kecurangan / sindikat.<br>
         Semua keputusan tim CERIABET bersifat mutlak & tidak bisa diganggu gugat.
+      </p>
+    </div>
+  </div>
+
+  <div id="promoModal2" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('promoModal2')">&times;</span>
+      <h2>MISI SPACEMAN DI MULAI 🚀</h2>
+      <p><strong>Tanggal akhir:</strong> -</p>
+      <h3>Syarat & Ketentuan Berlaku</h3>
+      <p>Minimum taruhan untuk mengikuti event adalah 2.000 per ronde permainan.</p>
+      <p><strong>Mekanisme Bonus</strong></p>
+      <ul>
+        <li>Multiplier X2 → 1 Mystery Box CRB</li>
+        <li>Multiplier X3 → 1 Mystery Box CRB</li>
+        <li>Multiplier X4 → 1 Mystery Box CRB</li>
+        <li>Multiplier X5 → 1 Mystery Box CRB</li>
+      </ul>
+      <p><strong>List Hadiah MYSTERY BOX CERIABET</strong></p>
+      <ul>
+        <li>💰 Saldo 5.000</li>
+        <li>💰 Saldo 10.000</li>
+        <li>💰 Saldo 25.000</li>
+        <li>💰 Saldo 50.000</li>
+        <li>🏍️ MOTOR HONDA ADV 150</li>
+      </ul>
+      <p><strong>Ketentuan Klaim Hadiah</strong><br>
+      Bonus hanya bisa diklaim apabila player melakukan permainan pada game SPACEMAN melalui situs resmi CERIABET. Player wajib melampirkan dokumentasi (screenshot/bukti kemenangan) untuk proses validasi klaim.</p>
+      <p><strong>Penukaran Hadiah</strong><br>
+      Hadiah saldo langsung akan dikreditkan ke akun user dalam 24 jam setelah klaim validasi berhasil. Untuk hadiah MOTOR, pemenang akan dihubungi oleh tim CERIABET untuk proses pengiriman hadiah.</p>
+      <h3 class="highlight">PERHATIAN</h3>
+      <p class="highlight">
+        CERIABET berhak membatalkan bonus apabila ada tindakan manipulasi baik itu individu ataupun kelompok/sindikat terutama BONUS HUNTER dan semua keputusan pihak CERIABET adalah mutlak dan tidak dapat diganggu gugat.
       </p>
     </div>
   </div>
@@ -218,11 +258,13 @@
         document.getElementById("btnDemo").classList.add("active");
       }
     }
-    function openModal() {
-      document.getElementById("promoModal").style.display = "flex";
+
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
     }
-    function closeModal() {
-      document.getElementById("promoModal").style.display = "none";
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
     }
   </script>
 </body>
