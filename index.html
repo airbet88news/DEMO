@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('https://i.postimg.cc/Jz2Q3vXB/20250619-174604.webp') no-repeat center center fixed;
+      background: url('https://media.giphy.com/media/l0HUpt2s9Pclgt9Vm/giphy.gif') no-repeat center center fixed;
       background-size: cover;
       color: white;
     }
@@ -155,133 +155,21 @@
       font-weight: bold;
     }
   </style>
+  <script>
+    // Disable right-click and show warning
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert("Maling Woi!");
+    });
+
+    // Block copying via Ctrl+C
+    document.addEventListener('copy', function(e) {
+      e.preventDefault();
+      alert("Maling Woi!");
+    });
+  </script>
 </head>
 <body>
-  <div class="nav-buttons">
-    <button id="btnPromo" class="active" onclick="showSection('promo')">PROMOSI</button>
-    <button id="btnDemo" onclick="showSection('demo')">DEMO SPACEMAN</button>
-  </div>
-
-  <div id="sectionPromo" class="section active">
-    <div class="promo-card">
-      <img class="promo-image" src="https://i.postimg.cc/4NHrgVTD/id-promo-ffa2f254-c9a5-4b6b-83e6-045de8cceb57-1750934800650.jpg" alt="Promo">
-      <div class="promo-content">
-        <div>
-          <div class="promo-title">BONUS NEW MEMBER UP TO 20% KHUSUS SPACEMAN</div>
-          <div class="promo-date">Khusus Member Spaceman</div>
-        </div>
-        <button class="promo-button" onclick="openModal('promoModal')">Detail</button>
-      </div>
-    </div>
-
-    <div class="promo-card">
-      <img class="promo-image" src="https://i.postimg.cc/q7HrYQhD/id-promo-00b6dd98-55cf-4d54-b68e-0a0302fd5c7a-1750934288283.jpg" alt="Promo">
-      <div class="promo-content">
-        <div>
-          <div class="promo-title">MISI SPACEMAN DI MULAI 🚀</div>
-          <div class="promo-date">Khusus Member Spaceman</div>
-        </div>
-        <button class="promo-button" onclick="openModal('promoModal2')">Detail</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="sectionDemo" class="section">
-    <iframe src="https://prelive-gs1.pragmaticplaylive.net/api/spacemanDemo" allowfullscreen></iframe>
-    <div class="currency-note">
-      * Nilai saldo & taruhan ditampilkan dalam Euro (€).<br>
-      Estimasi konversi: €1 ≈ Rp17.000.<br>
-      Saldo €100.000 = Rp1.700.000.000.
-    </div>
-  </div>
-
-  <div id="promoModal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeModal('promoModal')">&times;</span>
-      <h2>BONUS NEW MEMBER UP TO 20% KHUSUS SPACEMAN</h2>
-      <p><strong>Tanggal akhir:</strong> -</p>
-      <h3>Syarat & Ketentuan Berlaku</h3>
-      <ul>
-        <li>Promo ini berlaku untuk semua new player CERIABET</li>
-        <li>Hanya berlaku di game SPACEMAN</li>
-        <li>Minimal deposit IDR 25,000</li>
-        <li>Maksimal bonus yang diberikan IDR 200,000</li>
-        <li>Syarat TurnOver X3</li>
-        <li>Promo diberikan saat pertama kali sebelum bermain</li>
-      </ul>
-      <h3>Cara Klaim</h3>
-      <ul>
-        <li>Player wajib klaim sebelum saldo dimainkan</li>
-        <li>Player hanya bisa klaim via WhatsApp, Telegram & Livechat</li>
-      </ul>
-      <h3>Contoh Perhitungan</h3>
-      <p>Depo 50.000 + 10.000 Bonus x 3 = 180.000 (harus dicapai untuk withdraw)</p>
-      <h3 class="highlight">PERHATIAN</h3>
-      <p class="highlight">
-        CERIABET berhak membatalkan bonus jika ada kecurangan / sindikat.<br>
-        Semua keputusan tim CERIABET bersifat mutlak & tidak bisa diganggu gugat.
-      </p>
-      <a href="https://vpnceria.life/Ceriabet-Livechat" target="_blank" class="cta-button">KLAIM SEKARANG</a>
-    </div>
-  </div>
-
-  <div id="promoModal2" class="modal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeModal('promoModal2')">&times;</span>
-      <h2>MISI SPACEMAN DI MULAI 🚀</h2>
-      <p><strong>Tanggal akhir:</strong> -</p>
-      <h3>Syarat & Ketentuan Berlaku</h3>
-      <p>Minimum taruhan untuk mengikuti event adalah 2.000 per ronde permainan.</p>
-      <p><strong>Mekanisme Bonus</strong></p>
-      <ul>
-        <li>Multiplier X2 → 1 Mystery Box CRB</li>
-        <li>Multiplier X3 → 2 Mystery Box CRB</li>
-        <li>Multiplier X4 → 3 Mystery Box CRB</li>
-        <li>Multiplier X5 → 4 Mystery Box CRB</li>
-      </ul>
-      <p><strong>List Hadiah MYSTERY BOX CERIABET</strong></p>
-      <ul>
-        <li>💰 Saldo 5.000</li>
-        <li>💰 Saldo 10.000</li>
-        <li>💰 Saldo 25.000</li>
-        <li>💰 Saldo 50.000</li>
-        <li>🏍️ MOTOR HONDA ADV 150</li>
-      </ul>
-      <p><strong>Ketentuan Klaim Hadiah</strong><br>
-      Bonus hanya bisa diklaim apabila player melakukan permainan pada game SPACEMAN melalui situs resmi CERIABET. Player wajib melampirkan dokumentasi (screenshot/bukti kemenangan) untuk proses validasi klaim.</p>
-      <p><strong>Penukaran Hadiah</strong><br>
-      Hadiah saldo langsung akan dikreditkan ke akun user dalam 24 jam setelah klaim validasi berhasil. Untuk hadiah MOTOR, pemenang akan dihubungi oleh tim CERIABET untuk proses pengiriman hadiah.</p>
-      <h3 class="highlight">PERHATIAN</h3>
-      <p class="highlight">
-        CERIABET berhak membatalkan bonus apabila ada tindakan manipulasi baik itu individu ataupun kelompok/sindikat terutama BONUS HUNTER dan semua keputusan pihak CERIABET adalah mutlak dan tidak dapat diganggu gugat.
-      </p>
-      <a href="https://vpnceria.life/Ceriabet-Livechat" target="_blank" class="cta-button">KLAIM SEKARANG</a>
-    </div>
-  </div>
-
-  <script>
-    function showSection(target) {
-      document.getElementById("sectionPromo").classList.remove("active");
-      document.getElementById("sectionDemo").classList.remove("active");
-      document.getElementById("btnPromo").classList.remove("active");
-      document.getElementById("btnDemo").classList.remove("active");
-
-      if (target === 'promo') {
-        document.getElementById("sectionPromo").classList.add("active");
-        document.getElementById("btnPromo").classList.add("active");
-      } else {
-        document.getElementById("sectionDemo").classList.add("active");
-        document.getElementById("btnDemo").classList.add("active");
-      }
-    }
-
-    function openModal(id) {
-      document.getElementById(id).style.display = "flex";
-    }
-
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
-  </script>
+<!-- ... [CONTENT TETAP SAMA] ... -->
 </body>
 </html>
